@@ -6,6 +6,8 @@ docker login
 docker pull ubuntu
 ```
 Replace sirinali07 with your DockerHub username and version1 with your desired tag. The image name should be the same as your DockerHub repository name:
+
+
 `docker tag <image:tag> <dockerhub-account-id>/<imagename:tag>`
 ```
 docker tag ubuntu:version1 sirinali07/ubuntu:version2
