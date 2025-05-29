@@ -2,9 +2,9 @@
 A multistage build in Docker is a technique that allows you to use multiple FROM statements in a single Dockerfile, separating the build environment from the runtime environment.
 
 This helps:
-  ✅ optimize image size
-  ✅ improve security
-  ✅ reduce complexity
+* ✅ optimize image size
+* ✅ improve security
+* ✅ reduce complexity
 
 
 ## 🏗 Lab: Build & Run Node.js App in Docker (with Intro to Multistage Builds)
