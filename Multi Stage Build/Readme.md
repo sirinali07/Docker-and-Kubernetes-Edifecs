@@ -9,7 +9,7 @@ This helps:
 
 ## 🏗 Lab: Build & Run Node.js App in Docker (with Intro to Multistage Builds)
 
-### 📁 Step 0: Create Project Files
+### 📁 Step 1: Create Project Files
 Make a folder:
 ```bash
 mkdir docker-app
@@ -22,6 +22,7 @@ cd docker-app
 ```bash
 vi package.json
 ```
+Add the given content, by pressing `INSERT`
 ```json
 {
   "name": "docker-app",
@@ -36,11 +37,13 @@ vi package.json
   }
 }
 ```
+save the file using `ESCAPE + :wq!`
 
 📄 Create index.js
 ```bash
 vi index.js
 ```
+Add the given content, by pressing `INSERT`
 ```js
 const port = process.env.PORT || 8080;
 const express = require('express');
@@ -69,11 +72,13 @@ app.get('/liveness', (req, res) => res.send('Live !!'));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 ```
+save the file using `ESCAPE + :wq!`
 
 📄 Create Dockerfile
 ```bash
 vi Dockerfile
 ```
+Add the given content, by pressing `INSERT`
 ```Dockerfile
 # Stage 1: Build
 FROM node:18 AS builder
@@ -105,16 +110,18 @@ EXPOSE 8080
 CMD ["node", "index.js"]
 
 ```
+save the file using `ESCAPE + :wq!`
 
-### 🏃‍♂️ Step 1: Build the Docker Image
+### 🏃‍♂️ Step 2: Build the Docker Image
 ```bash
 docker build -t test:v1 .
 ```
+Verify:
 ```bash
 docker images
 ```
 
-### 🏃‍♂️ Step 2: Run the Docker Container
+### 🏃‍♂️ Step 3: Run the Docker Container
 ```bash
 docker run -d -p 8080:8080 --name myapp test:v1
 ```
@@ -122,19 +129,19 @@ Confirm:
 ```bash
 docker ps
 ```
-### 🏃‍♂️ Step 3: Test Locally
+### 🏃‍♂️ Step 4: Test Locally
 ```bash
 curl http://localhost:8080
 ```
 ✅ You should get the Hello-World! page.
 
-### 🏃‍♂️ Step 4: Open Firewall for External Access
+### 🏃‍♂️ Step 5: Open Firewall for External Access
 * Go to your cloud console (AWS/GCP/Azure)
 * Check security group / firewall rules
 * Add inbound TCP rule on port 8080
 * Allow from your IP or 0.0.0.0/0 (for testing)
 
-### 🏃‍♂️ Step 5: Test from Browser
+### 🏃‍♂️ Step 6: Test from Browser
 ```bash
 http://<YOUR_PUBLIC_IP>:8080
 ```
