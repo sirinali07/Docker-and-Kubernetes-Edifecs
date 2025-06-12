@@ -131,7 +131,28 @@ Access shell on a container running in your Pod to verify volume
 kubectl exec -it <pod-name> -c <ctr-name> -- /bin/bash
 ```
 ```
+ cd /data/
+```
+```
+ echo "Hello, this is created by con1 container" > con1-file
+```
+```
+exit
+```
+```
 kubectl exec -it <pod-name> -c <ctr-name> -- /bin/bash
+```
+```
+ cd /opt/data/
+```
+```
+ls
+```
+```
+ echo "Hello, this is created by con2 container" > con2-file
+```
+```
+exit
 ```
 ## Task 3: Cleanup the resources using the below command
 Delete the resources created during the lab:
