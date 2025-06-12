@@ -128,7 +128,7 @@ kubectl describe pod <pod-name>
 ```
 Access shell on a container running in your Pod to verify volume
 ```
-kubectl exec -it <pod-name> -c <ctr-name> -- /bin/bash
+kubectl exec -it <pod-name> -c con1 -- /bin/bash
 ```
 ```
  cd /data/
@@ -140,7 +140,7 @@ kubectl exec -it <pod-name> -c <ctr-name> -- /bin/bash
 exit
 ```
 ```
-kubectl exec -it <pod-name> -c <ctr-name> -- /bin/bash
+kubectl exec -it <pod-name> -c con2 -- /bin/bash
 ```
 ```
  cd /opt/data/
