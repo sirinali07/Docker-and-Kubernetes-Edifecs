@@ -103,7 +103,7 @@ spec:
       - image: tomcat:latest
         name: con2
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         volumeMounts:
         - name: empty-vol
           mountPath: /opt/data
