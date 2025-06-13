@@ -125,7 +125,7 @@ kubectl delete -f pv-volume.yaml
 ### Task 5: Create PVC and claim storage with nginx Pod
 Creating pvc 
 ```
-vi pv-claim.yaml
+vi sc-pv-claim.yaml
 ```
 ```yaml
 kind: PersistentVolumeClaim
@@ -142,7 +142,7 @@ spec:
 ```
 Apply the above yaml 
 ```
-kubectl apply -f pv-claim.yaml
+kubectl apply -f sc-pv-claim.yaml
 ```
 Verify the pv and pvc
 ```
