@@ -185,7 +185,14 @@ spec:
         - name: cloud-storage
           mountPath: /usr/share/nginx/html
 ```
+Apply the above yaml 
+```
+kubectl apply -f sc-pv-claim.yaml
+```
 Verify deployment
+```
+kubectl get pv,pvc
+```
 ```
 kubectl get deploy
 ```
